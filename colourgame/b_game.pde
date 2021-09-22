@@ -1,6 +1,8 @@
 void game() {
   background(0);
   fill(255);
+  
+  //text
   stroke(255);
   rect(0, 0, 400, 600);
   fill(255, 0, 0);
@@ -14,51 +16,55 @@ void game() {
 
   //button
   textAlign(CENTER);
-  fill(colours[colourr]);
-  text(words[wordr], 400, 400);
-
+  fill(colours[c]);
+  text(words[w], 400, 400);
   textAlign(CORNER);
 
   // timer 
   fill(0, 255, 0);
-  timerx=timerx + 5;
-  rect(0, 550, timerx, 50);
-  if (timerx>800)mode=gameover;
+  timer=timer + 9;
+  rect(0, 550, timer, 50);
+  if (timer>800)mode=gameover;
 }
 
 void gameclicks() {
-
+//left side true
   if (mouseX>0 && mouseX<width/2 && mouseY>0 && mouseY <height) {
-    if (colourr==wordr) {
+    if (c==w) {
       score=score+1;
       //50/50
       fifty=fifty+int(random(0, 2));
       if (fifty<1) {
-        wordr=int(random(0, 6));
-        colourr=wordr;
+        w=int(random(0, 6));
+        c=w;
       } else {
-        wordr=int(random(0, 6));
-        colourr=int(random(0, 6));
-      }
-      timerx=0;
+        w=int(random(0, 6));
+        c=int(random(0, 6));
+        while (w==c) {
+          w=int(random(0, 6));
+          c=int(random(0, 6));
+        }
+      } 
+      timer=0;
     } else mode=gameover;
   }
 
 
   if (mouseX>width/2 && mouseX<width && mouseY>0 && mouseY <height) {
-    if (colourr==wordr) mode=gameover;
-    if (colourr>wordr || colourr<wordr) {
+    //right side false
+    if (c==w) mode=gameover;
+    if (c>w || c<w) {
       score=score+1;
       //50/50
       fifty=fifty+int(random(0, 2));
       if (fifty<1) {
-        wordr=int(random(0, 6));
-        colourr=wordr;
+        w=int(random(0, 6));
+        c=w;
       } else {
-        wordr=int(random(0, 6));
-        colourr=int(random(0, 6));
+        w=int(random(0, 6));
+        c=int(random(0, 6));
       }
-      timerx=0;
+      timer=0;
     }
   }
 }

@@ -1,5 +1,5 @@
-void gameover() {
-  background(255);
+void gameover(){
+  background(170,197,255);
   text("gameover", 125, 200);
   text("score: " +score, 200, 400);
   text("high score: " + highscore, 40, 525);

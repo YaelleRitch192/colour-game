@@ -8,12 +8,13 @@ void intro() {
   fill(0);
   textSize(90);
   text("colour game", 100, 300);
+  timer=0;
 }
 
 
 
 void introclicks() {
   if (mouseX>0 && mouseX<800 && mouseY>0 && mouseY<600) mode=game;
-  wordr=int(random(0, 6));
-  colourr=int(random(0, 6));
+  w=int(random(0, 6));
+  c=int(random(0, 6));
 }

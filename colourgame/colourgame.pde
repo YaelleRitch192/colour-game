@@ -5,11 +5,11 @@
 //varibles
 
 //ints
-int wordr;
-int colourr;
+int w;
+int c;
 int score;
 int highscore;
-int timerx;
+int timer;
 int fifty;
 
 int mode;
@@ -41,6 +41,7 @@ void setup() {
   size(800, 600);
   font=createFont("font.ttf", 100);
   mode=intro;
+  //words array
   words=new String[6];
   words[0]="red";
   words[1]="orange";
@@ -48,6 +49,7 @@ void setup() {
   words[3]="green";
   words[4]="blue";
   words[5]="purple";
+  //colour array
   colours=new color[6];
   colours[0]=red; 
   colours[1]=orange;
