@@ -33,7 +33,7 @@ void gameclicks() {
     if (c==w) {
       score=score+1;
       //50/50
-      fifty=fifty+int(random(0, 2));
+      fifty=int(random(0, 2));
       if (fifty<1) {
         w=int(random(0, 6));
         c=w;
@@ -56,7 +56,7 @@ void gameclicks() {
     if (c>w || c<w) {
       score=score+1;
       //50/50
-      fifty=fifty+int(random(0, 2));
+      fifty=int(random(0, 2));
       if (fifty<1) {
         w=int(random(0, 6));
         c=w;
