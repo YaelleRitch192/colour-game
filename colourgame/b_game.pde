@@ -63,6 +63,10 @@ void gameclicks() {
       } else {
         w=int(random(0, 6));
         c=int(random(0, 6));
+        while (w==c) {
+          w=int(random(0, 6));
+          c=int(random(0, 6));
+        }
       }
       timer=0;
     }
